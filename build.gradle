@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+
+    id 'org.springframework.boot' version '1.4.5.RELEASE'
+}
+
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    //implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.h2database:h2'
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile("org.springframework.boot:spring-boot-starter-jersey")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile("org.thymeleaf:thymeleaf-spring4")
+    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+
+    compile group: 'org.glassfish.jersey.test-framework', name: 'jersey-test-framework-core', version: '2.6'
+
+    // compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+//    compile 'com.fasterxml.jackson.core:jackson-core:2.6.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.3'
+//    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.3'
+    testImplementation ('org.glassfish.jersey.containers:jersey-container-servlet:2.25.1')
+
+
+}
+
+apply plugin: 'org.springframework.boot'
